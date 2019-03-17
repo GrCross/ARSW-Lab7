@@ -3,37 +3,41 @@
     <head>
         <title>cinemas</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <script src="/webjars/jquery/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="/js/app.js"></script>
         <script src="/js/apimock.js"></script>
     </head>
     <body>
 
-        <div class="col-4 col-4 col-4">
-            <div>
+        <div class="container">
+            <div style="padding: 3rem 1.5rem; text-align: center">
                 <h1>Reserva Cinemas</h1>
             </div>
             <div>
-                <form>
-                    <input id="inputBuscar" type="text" name="funcion" style="border-color: brown; margin: 10px; width: 200px">
-                    <input type="button" name="Buscar" value="Buscar" onclick="Cinemas.buscarCinemas()">
+                <form style="text-align: center">
+                    <div class="form-group"> 
+                        <input id="inputBuscar" class="form-control" style="width: auto; margin: auto" type="text" name="funcion">
+                        <br>
+                        <input class="btn btn-primary" type="button" name="Buscar" value="Buscar"  onclick="Cinemas.buscarCinemas()" >
+                    </div>
+                    <div class="form-group">
+                        <table style="width: auto" id="tablaCines" class="table" align="center">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Cinema</th>
+                                    <th scope="col">Función</th>
+                                    <th scope="col">Sillas</th>
+                                    <th scope="col">Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>    
+                        </table>
+                    </div>                    
                 </form>
-
-                <form>
-                    <table style="width:20%">
-                        <tr>
-                            <th>Cinema</th>
-                            <th>Función</th>
-                            <th>Sillas</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </table>
-                </form>
-
             </div>
         </div>    
 
