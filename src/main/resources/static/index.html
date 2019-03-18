@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="/js/app.js"></script>
         <script src="/js/apimock.js"></script>
+        <link href="/css/app.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
 
@@ -21,13 +22,13 @@
                     <div class="form-group"> 
                         <input id="inputBuscar" class="form-control" style="width: auto; margin: auto" type="text" name="funcion">
                         <br>
-                        <input class="btn btn-primary" type="button" name="Buscar" value="Buscar"  onclick="Cinemas.buscarCinemas()" >
+                        <button type="button" class="btn btn-outline-primary m-0 waves-effect" onclick="Cinemas.buscarCinemas()">Buscar</button>
                     </div>
                     <div class="form-group">
-                        <table style="width: auto" id="tablaCines" class="table" align="center">
+                        <table style="width: auto" id="tablaCines" class="table table-hover" align="center">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col"><i class="grin-alt"></i>#</th>
                                     <th scope="col">Cinema</th>
                                     <th scope="col">Función</th>
                                     <th scope="col">Sillas</th>
@@ -38,6 +39,12 @@
                         </table>
                     </div>                    
                 </form>
+                <table id="tablaSeats">
+                    <thead>
+
+                    </thead>
+                    <tbody> </tbody>
+                </table>
             </div>
         </div>    
 
