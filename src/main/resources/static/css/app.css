@@ -1,3 +1,34 @@
+body, html {
+    height: 100%;
+    font-family: 'Minion Variable Concept';
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    margin-top: 10px;
+    color: white;
+}
+
+span {
+    color: white;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url("/images/fondoNegro.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .table tbody tr.highlight td {
-    background-color: grey;
+    background-color: darkred;
 }

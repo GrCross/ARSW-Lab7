@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>cinemas</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <script src="/webjars/jquery/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
-        <script src="/js/app.js"></script>
-        <script src="/js/apimock.js"></script>
-        <link href="/css/app.css" type="text/css" rel="stylesheet" />
-    </head>
-    <body>
 
-        <div class="container">
-            <div style="padding: 3rem 1.5rem; text-align: center">
-                <h1>Reserva Cinemas</h1>
-            </div>
-            <div>
-                <form style="text-align: center">
-                    <div class="form-group"> 
-                        <input id="inputBuscar" class="form-control" style="width: auto; margin: auto" type="text" name="funcion">
-                        <br>
-                        <button type="button" class="btn btn-outline-primary m-0 waves-effect" onclick="Cinemas.buscarCinemas()">Buscar</button>
-                    </div>
-                    <div class="form-group">
-                        <table style="width: auto" id="tablaCines" class="table table-hover" align="center">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col"><i class="grin-alt"></i>#</th>
-                                    <th scope="col">Cinema</th>
-                                    <th scope="col">Función</th>
-                                    <th scope="col">Sillas</th>
-                                    <th scope="col">Fecha</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>    
-                        </table>
-                    </div>                    
-                </form>
-                <table id="tablaSeats">
-                    <thead>
+<head>
+    <title>cinemas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="/js/app.js"></script>
+    <script src="/js/apimock.js"></script>
+    <script src="/js/apiclient.js"></script>
+    <link href="/css/app.css" type="text/css" rel="stylesheet" />
+</head>
 
-                    </thead>
-                    <tbody> </tbody>
-                </table>
-            </div>
-        </div>    
+<body class="bg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="/images/tituloSinFondo.png" width="auto" height="auto" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reservas.html">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Proximamente</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- Three columns of text below the carousel -->
+        <div class="row" style="margin-top: 120px">
+            <div class="col-lg-4" align="center">
+                <img class="rounded-circle" src="/images/cinemasConFondo.png" alt="Generic placeholder image" width="140"
+                    height="140">
+                <h2>Cinemas</h2>
+                <a class="btn btn-secondary" href="#" role="button">Ver cinemas disponibles »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4" align="center">
+                <img class="rounded-circle" src="/images/funcionesConFondo.png" alt="Generic placeholder image" width="140"
+                    height="140">
+                <h2>Funciones</h2>
+                <a class="btn btn-secondary" href="#" role="button">Ver funciones »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4" align="center">
+                <img class="rounded-circle" src="/images/reservasConFondo.png" alt="Generic placeholder image" width="140"
+                    height="140">
+                <h2>Reservas</h2>
+                <a class="btn btn-secondary" href="#" role="button">Hacer reservas »</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div>
+</body>
 
-    </body>
 </html>

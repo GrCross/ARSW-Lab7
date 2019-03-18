@@ -13,10 +13,8 @@ import edu.eci.arsw.cinema.persistence.CinemaException;
 import edu.eci.arsw.cinema.persistence.CinemaPersistenceException;
 import edu.eci.arsw.cinema.persistence.CinemaPersitence;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +33,6 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
 	
     private final ConcurrentHashMap<String,Cinema> cinemas=new ConcurrentHashMap<>();
     
-    
-
     public InMemoryCinemaPersistence() {
     	
         //load stub data
@@ -63,10 +59,7 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
         cinemas.put("cinemaX", c1);
         cinemas.put("cinePolis", c2);
         cinemas.put("cineMania", c3);
-    }    
-    
-    
-    
+    }
     
     @Override
     public void buyTicket(int row, int col, String cinema, String date, String movieName) throws CinemaException {
@@ -82,8 +75,6 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
         }
         
     }
-
-    
     
     @Override
     public List<CinemaFunction> getFunctionsbyCinemaAndDate(String cinema, String date) throws CinemaException {
@@ -147,9 +138,6 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
     	return this.cinemas;
     }
 
-
-
-
 	@Override
 	public List<Movie> filterMovies(String cinema, String fecha, String filter) throws CinemaException {
 		Cinema c = cinemas.get(cinema);
@@ -160,11 +148,5 @@ public class InMemoryCinemaPersistence implements CinemaPersitence{
 	public void setFilter(Filter filter) {
 		this.filter = filter;
 	}
-    
- 
-    
-    
-    
-    
     
 }

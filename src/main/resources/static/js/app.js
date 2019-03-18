@@ -1,4 +1,3 @@
-
 var Cinemas = (function(){
 
     var cinema = "";
@@ -6,13 +5,12 @@ var Cinemas = (function(){
     var funciones = [];
 
     var cambiarCinema = function (param) {
-
         var movieName;
         var movieSeatsCols;
         var movieSeatsRows;
         var movieDate;
         var singleFunction;
-        var functions = param[0].functions;
+        var functions = param.functions;
         totalFunctions = functions;
         funciones = [];
         for(var i = 0; i < functions.length; i++){
@@ -30,38 +28,51 @@ var Cinemas = (function(){
         $("#tablaCines").find('tbody').empty();
         for (var i = 0; i < funciones.length; i++) {
             var funcion = funciones[i];
-            $("#tablaCines").find('tbody').append('<tr class="clickable-row"><th scope="row">'+(i+1)+'</th><td>'+funcion.cinema+'</td><td>'+funcion.funcion+'</td><td>'+funcion.seats+'</td><td>'+funcion.fecha+'</td></tr>');
+            $("#tablaCines").find('tbody').append('<tr class="clickable-row"><th scope="row" data-funcion="'+funcion.funcion+'">'+(i+1)+'</th><td data-funcion="'+funcion.funcion+'">'+funcion.cinema+'</td><td data-funcion="'+funcion.funcion+'">'+funcion.funcion+'</td><td data-funcion="'+funcion.funcion+'">'+funcion.seats+'</td><td data-funcion="'+funcion.funcion+'">'+funcion.fecha+'</td></tr>');
         }
+        mostrarSillas();
+    }
+
+    var mostrarSillas = function() {
         var movieSeatsCols;
         var movieSeatsRows;
         $('#tablaCines').on('click', 'tbody tr', function(event) {
             $(this).addClass('highlight').siblings().removeClass('highlight');
-            for(var i = 0; i < totalFunctions.length; i++){
-                movieSeatsCols = totalFunctions[i].seats[0].length;
-                movieSeatsRows = totalFunctions[i].seats.length;
-                for (var row = 0; row < movieSeatsRows; row++) {
-                    $("#tablaSeats").find("tbody").append('<tr>');
-                    for (var col = 0; col < movieSeatsCols; col++) {
-                        $("#tablaSeats").find("tbody").append('<td>');
-                        if(totalFunctions[i].seats[row][col]) {
-                            $("#tablaSeats").find("tbody").append('true');
-                        } else {
-                            $("#tablaSeats").find("tbody").append('false');
-                        }
-                        $("#tablaSeats").find("tbody").append('</td>');
-                    }
-                    $("#tablaSeats").find("tbody").append('</tr>');
-                }
+            $("#tablaSeats").find("tbody").empty();
+            var rowSelected = false;
+            for(var i = 0; i < totalFunctions.length && !rowSelected; i++){
+                if (totalFunctions[i].movie.name == event.target.dataset.funcion) {
+                    movieSeatsCols = totalFunctions[i].seats[0].length;
+                    movieSeatsRows = totalFunctions[i].seats.length;
+                    generarTablaSillas(i, movieSeatsCols, movieSeatsRows);
+                }                
             }
-            
-        });
+        });            
+    }
+
+    var generarTablaSillas = function(funcion, movieSeatsCols, movieSeatsRows) {
+        for (var row = 0; row < movieSeatsRows; row++) {
+            $("#tablaSeats").find("tbody").append('<tr>');
+            for (var col = 0; col < movieSeatsCols; col++) {
+                $("#tablaSeats").find("tbody").append('<td>');
+                if(totalFunctions[funcion].seats[row][col]) {
+                    $("#tablaSeats").find("tbody").append('<img src=/images/sillaOffMini.png/>');
+                } else {
+                    $("#tablaSeats").find("tbody").append('<img src=/images/sillaOnMini.png/>');
+                }
+                $("#tablaSeats").find("tbody").append('</td>');
+            }
+            $("#tablaSeats").find("tbody").append('</tr>');
+        }
+        rowSelected = true;
     }
 
     return {
-        buscarCinemas: function(){
+        buscarCinemas: function() {
             cinema = $("#inputBuscar").val();
-            apimock.getCinemaByName(cinema,cambiarCinema);
-        }        
+            //apimock.getCinemaByName(cinema,cambiarCinema);
+            apiclient.getCinemaByName(cinema,cambiarCinema);
+        }
     };
 
 })();

@@ -1,7 +1,0 @@
-Integrantes:
-
-Valentina Siabatto
-Daniel Rosales
-
-Link GitHub
-https://github.com/Siabell/ARSWLab6.git
