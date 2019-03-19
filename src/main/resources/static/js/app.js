@@ -26,6 +26,7 @@ var Cinemas = (function(){
 
     var actualizarTabla = function() {
         $("#tablaCines").find('tbody').empty();
+        $("#tablaSeats").find("tbody").empty();
         for (var i = 0; i < funciones.length; i++) {
             var funcion = funciones[i];
             $("#tablaCines").find('tbody').append('<tr class="clickable-row"><th scope="row" data-funcion="'+funcion.funcion+'">'+(i+1)+'</th><td data-funcion="'+funcion.funcion+'">'+funcion.cinema+'</td><td data-funcion="'+funcion.funcion+'">'+funcion.funcion+'</td><td data-funcion="'+funcion.funcion+'">'+funcion.seats+'</td><td data-funcion="'+funcion.funcion+'">'+funcion.fecha+'</td></tr>');
