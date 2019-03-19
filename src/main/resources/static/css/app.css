@@ -3,6 +3,10 @@ body, html {
     font-family: 'Minion Variable Concept';
 }
 
+table{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
 h1 {
     color: white;
 }
@@ -18,7 +22,7 @@ span {
 
 .bg { 
     /* The image used */
-    background-image: url("/images/fondoNegro.jpg");
+    background-image: url("../images/fondoNegro.jpg");
 
     /* Full height */
     height: 100%; 
@@ -30,5 +34,105 @@ span {
 }
 
 .table tbody tr.highlight td {
-    background-color: darkred;
+    background-color: tan;
 }
+
+.btn-seat {
+    background-color: transparent;
+    border-color: transparent;
+    width: auto;
+    align-content: center;
+}
+
+/*.btn-seat-white {
+    background-color: transparent;
+    border-color: transparent;
+    width: auto;
+    align-content: center;
+    background-image: url(../images/sillaOnMini.png);
+}*/
+
+section .wave{
+    
+    position: absolute;
+    width: 100%;
+    height: 143px ;
+    bottom: 0;
+    left: 0;
+    background: url(../images/wave.png);
+    animation: animate 10s linear infinite;
+}
+
+section .wave::before{
+    content: '';
+    width: 100%;
+    height: 143px;
+    background: url(../images/wave.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    animation: animate-slow 10s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 1000px;
+    }
+}
+
+@keyframes animate-slow{
+    0%{
+        background-position: 1000px;
+    }
+    100%{
+        background-position: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table-curved {
+    border-collapse: unset;
+}/*
+.table-curved {
+    border: solid #ccc 1px;
+    border-radius: 6px;
+    border-left:0px;
+}
+.table-curved td, .table-curved th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+.table-curved th {
+    border-top: none;
+}
+.table-curved th:first-child {
+    border-radius: 6px 0 0 0;
+}
+.table-curved th:last-child {
+    border-radius: 0 6px 0 0;
+}
+.table-curved th:only-child{
+    border-radius: 6px 6px 0 0;
+}
+.table-curved tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+.table-curved tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+*/ 

@@ -41,13 +41,13 @@
             <form style="text-align: center">
                 <div class="row" style="color: white">
                     <div class="col-md-4"></div>
-                    <div class="col-md-1">Ingrese el cinema: </div>
+                    <div class="col-md-0" style="font-family:Georgia, 'Times New Roman', Times, serif">Ingrese el cinema: </div>
                     <div class="col-md-1"><input id="inputBuscar" class="form-control" style="width: auto; margin: auto" type="text" name="funcion"></div>
-                    <div class="col-md-4"><button type="button" class="btn btn-outline-primary m-0 waves-effect" onclick="Cinemas.buscarCinemas()">Buscar</button></div>
+                    <div class="col-md-4"><button type="button" class="btn btn-secondary  m-0 waves-effect" aria-label="Default" onclick="Cinemas.buscarCinemas()">Buscar</button></div>
                 </div>
                 <br>
                 <div class="row">
-                    <table id="tablaCines" class="table table-hover table-light" style="width: auto" align="center">
+                    <table id="tablaCines" class="table table-hover table-dark " style="width: auto" align="center">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col"><i class="grin-alt"></i>#</th>
@@ -61,12 +61,15 @@
                     </table>
                 </div>
             </form>
-            <table id="tablaSeats" class="table table-borderless table-condensed table-hover" style="width: auto" align="center">
+            <table id="tablaSeats" class="table table-borderless " style="width: auto" align="center">
                 <thead></thead>
                 <tbody></tbody>
             </table>
         </div>
     </div>
+    <section>
+        <div class="wave"></div>
+    </section>
 </body>
 
 </html>

@@ -45,6 +45,7 @@ var Cinemas = (function(){
                     movieSeatsCols = totalFunctions[i].seats[0].length;
                     movieSeatsRows = totalFunctions[i].seats.length;
                     generarTablaSillas(i, movieSeatsCols, movieSeatsRows);
+                    rowSelected = true;
                 }                
             }
         });            
@@ -55,22 +56,44 @@ var Cinemas = (function(){
             $("#tablaSeats").find("tbody").append('<tr>');
             for (var col = 0; col < movieSeatsCols; col++) {
                 $("#tablaSeats").find("tbody").append('<td>');
+                    //$("#tablaSeats").find("tbody").append('<a>');
                 if(totalFunctions[funcion].seats[row][col]) {
-                    $("#tablaSeats").find("tbody").append('<img src=/images/sillaOffMini.png/>');
+                    $("#tablaSeats").find("tbody").append('<button data-row="'+row+'" data-col="'+col+'" class="btn-seat"><img src="../images/sillaOnMini.png" /></button>');
                 } else {
-                    $("#tablaSeats").find("tbody").append('<img src=/images/sillaOnMini.png/>');
+                    $("#tablaSeats").find("tbody").append('<button data-row="'+row+'" data-col="'+col+'" class="btn-seat"><img src="../images/sillaOffMini.png" /></button>');
                 }
+                    //$("#tablaSeats").find("tbody").append('</a>');
                 $("#tablaSeats").find("tbody").append('</td>');
             }
             $("#tablaSeats").find("tbody").append('</tr>');
         }
-        rowSelected = true;
+        cambiarSillas(funcion);
+    }
+
+    var cambiarSillas = function(funcion){
+        $('#tablaSeats').on('click', 'tbody button', function(event) {                
+                var row = event.target.dataset.row;
+                var col = event.target.dataset.col;
+                if (totalFunctions[funcion].seats[row][col]) {
+                    console.log(event.target);
+                    console.log(event.target.dataset.row);
+                    console.log(event.target.dataset.col);
+                    $(this).find('img').attr('src','../images/sillaOffMini.png');
+                    totalFunctions[funcion].seats[row][col] = false;
+                    alert("Se reservo correctamente el asiento");
+                } else {
+                    $(this).find('img').attr('src','../images/sillaOnMini.png');
+                    totalFunctions[funcion].seats[row][col] = true;
+                    alert("Se cancelo la reserva correctamente");
+                }
+            }
+        );
     }
 
     return {
         buscarCinemas: function() {
             cinema = $("#inputBuscar").val();
-            //apimock.getCinemaByName(cinema,cambiarCinema);
+            apimock.getCinemaByName(cinema,cambiarCinema);
             apiclient.getCinemaByName(cinema,cambiarCinema);
         }
     };
