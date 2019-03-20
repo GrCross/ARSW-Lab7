@@ -3,10 +3,6 @@ body, html {
     font-family: 'Minion Variable Concept';
 }
 
-table{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-}
-
 h1 {
     color: white;
 }
@@ -20,17 +16,22 @@ span {
     color: white;
 }
 
-.bg { 
-    /* The image used */
-    background-image: url("../images/fondoNegro.jpg");
-
-    /* Full height */
-    height: 100%; 
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
+.bg {
+    background: url("../images/fondoNegro.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+}
+
+/*Footer*/
+.footer-bottom {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    line-height: 0.3cm;
+    background-color: transparent;
+    padding: 0.5em;
 }
 
 .table tbody tr.highlight td {
@@ -44,95 +45,85 @@ span {
     align-content: center;
 }
 
-/*.btn-seat-white {
-    background-color: transparent;
-    border-color: transparent;
-    width: auto;
-    align-content: center;
-    background-image: url(../images/sillaOnMini.png);
-}*/
-
-section .wave{
-    
+section .wave {
     position: absolute;
     width: 100%;
-    height: 143px ;
+    height: 90px;
+    top: 50px;
     bottom: 0;
     left: 0;
     background: url(../images/cintaPelicula.png);
-    animation: animate 10s linear infinite;
+    animation: animate 15s linear infinite;
 }
 
-section .wave::before{
+section .wave::before {
     content: '';
     width: 100%;
-    height: 143px;
+    height: 90px;
     background: url(../images/cintaPeliculaBlanca.png);
     position: absolute;
-    top: 0;
+    top: 15px;
     left: 0;
     opacity: 0.4;
-    animation: animate-slow 10s linear infinite;
+    animation: animate-slow 15s linear infinite;
 }
 
-@keyframes animate{
-    0%{
+@keyframes animate {
+    0% {
         background-position: 0;
     }
-    100%{
+    100% {
         background-position: 1000px;
     }
 }
 
-@keyframes animate-slow{
-    0%{
+@keyframes animate-slow {
+    0% {
         background-position: 1000px;
     }
-    100%{
+    100% {
         background-position: 0;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+.table {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 .table-curved {
     border-collapse: unset;
-}/*
+}
+
 .table-curved {
     border: solid #ccc 1px;
     border-radius: 6px;
-    border-left:0px;
+    border-left: 0px;
 }
+
 .table-curved td, .table-curved th {
     border-left: 1px solid #ccc;
     border-top: 1px solid #ccc;
 }
+
 .table-curved th {
     border-top: none;
 }
+
 .table-curved th:first-child {
     border-radius: 6px 0 0 0;
 }
+
 .table-curved th:last-child {
     border-radius: 0 6px 0 0;
 }
-.table-curved th:only-child{
+
+.table-curved th:only-child {
     border-radius: 6px 6px 0 0;
 }
+
 .table-curved tr:last-child td:first-child {
     border-radius: 0 0 0 6px;
 }
+
 .table-curved tr:last-child td:last-child {
     border-radius: 0 0 6px 0;
-*/ 

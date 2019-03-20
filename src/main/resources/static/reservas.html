@@ -22,7 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cinemas.html">Cinemas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Funciones</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="reservas.html">Reservas</a>
@@ -33,9 +39,10 @@
             </ul>
         </div>
     </nav>
-    <section>
+    <section id="cintasCine">
         <div class="wave"></div>
     </section>
+    <br><br><br>
     <div class="container">
         <div style="padding: 3rem 1.5rem; text-align: center">
             <h1>Reservar Funciones</h1>
@@ -49,30 +56,51 @@
                     <div class="col-md-1"><input id="inputBuscar" class="form-control" style="width: auto; margin: auto"
                             type="text" name="funcion"></div>
                     <div class="col-md-4"><button type="button" class="btn btn-secondary  m-0 waves-effect"
-                            aria-label="Default" onclick="Cinemas.buscarCinemas()">Buscar</button></div>
+                            aria-label="Default" onclick="app.buscarCinemas()">Buscar</button></div>
                 </div>
                 <br>
                 <div class="row">
-                    <table id="tablaCines" class="table table-hover table-dark " style="width: auto" align="center">
+                    <table id="tablaCines" class="table table-hover table-dark table-curved" style="width: auto"
+                        align="center">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col"><i class="grin-alt"></i>#</th>
-                                <th scope="col">Cinema</th>
-                                <th scope="col">Función</th>
-                                <th scope="col">Sillas</th>
-                                <th scope="col">Fecha</th>
+                                <th scope="col" style="width: 35px"><i class="grin-alt"></i>#</th>
+                                <th scope="col" style="width: 130px">Cinema</th>
+                                <th scope="col" style="width: 280px">Función</th>
+                                <th scope="col" style="width: 64px">Sillas</th>
+                                <th scope="col" style="width: 160px">Fecha</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <tr>
+                                <th colspan="5">No se ha realizado una búsqueda.</th>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </form>
+            <br><br>
             <table id="tablaSeats" class="table table-borderless " style="width: auto" align="center">
                 <thead></thead>
                 <tbody></tbody>
             </table>
         </div>
     </div>
+    <br><br><br>
+    <footer class="mainfooter">
+        <div class="footer-bottom">
+            <div class="container">
+                <img src="/images/tituloSinFondo.png" width="auto" height="auto" class="d-inline-block align-top"
+                    alt=""><br><br>
+                <p>Creado por: Daniel Rosales & Carlos Medina</p>
+                <p>Email de contacto:
+                    <a href="mailto:daniel.rosales@mail.escuelaing.edu.co">Daniel</a> &
+                    <a href="mailto:carlos.medina-ri@mail.escuelaing.edu.co">Carlos</a>
+                </p>
+                <p>&copy; Copyright 2019</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
