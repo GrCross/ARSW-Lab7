@@ -1,6 +1,6 @@
 body, html {
     height: 100%;
-    font-family: 'Minion Variable Concept';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
@@ -127,3 +127,10 @@ section .wave::before {
 
 .table-curved tr:last-child td:last-child {
     border-radius: 0 0 6px 0;
+}
+
+.tituloImgCarrusel {
+    color: beige;
+    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
