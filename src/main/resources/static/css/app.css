@@ -24,25 +24,29 @@ span {
     background-size: cover;
 }
 
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 /*Footer*/
 .footer-bottom {
     color: white;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 0.3cm;
     background-color: transparent;
-    padding: 0.5em;
+    margin-bottom: 10px;
 }
 
 .table tbody tr.highlight td {
-    background-color: tan;
+    background-color: darkgray;
 }
 
 .btn-seat {
     background-color: transparent;
     border-color: transparent;
     width: auto;
-    align-content: center;
+    text-align: center;
 }
 
 section .wave {
@@ -60,11 +64,11 @@ section .wave::before {
     content: '';
     width: 100%;
     height: 90px;
-    background: url(../images/cintaPeliculaBlanca.png);
+    background: url(/images/cintaPeliculaBlanca.png);
     position: absolute;
     top: 15px;
     left: 0;
-    opacity: 0.4;
+    opacity: 0.65;
     animation: animate-slow 15s linear infinite;
 }
 
@@ -88,6 +92,7 @@ section .wave::before {
 
 .table {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
 }
 
 .table-curved {
@@ -129,8 +134,12 @@ section .wave::before {
     border-radius: 0 0 6px 0;
 }
 
+#tablaSeats tr th {
+    color: white;
+}
+
 .tituloImgCarrusel {
     color: beige;
-    font-size: 35px;
+    font-size: 22px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
